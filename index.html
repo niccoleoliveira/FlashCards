@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f1fa;
+            color: #f1f1f1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #910404;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .flashcard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px; /* Espaço entre os flashcards */
+            width: 100%;
+            max-width: 1000px; /* Reduzindo a largura para proporção melhor */
+        }
+
+        .flashcard {
+            position: relative;
+            width: 100%;
+            padding: 20px;
+            height: 250px; 
+            background-color: #a89797; 
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(3, 3, 3, 0.2);
+            color: #000000;
+            text-align: center;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: transform 0.4s;
+            transform-style: preserve-3d;
+        }
+
+        .flashcard.is-flipped {
+            transform: rotateY(180deg);
+        }
+
+        /* Frente e verso do flashcard */
+        .flashcard .front, .flashcard .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            backface-visibility: hidden;
+            padding: 20px;
+            font-size: 1em;
+        }
+
+        .flashcard .back {
+            transform: rotateY(180deg);
+            background-color: #7c7b70;
+            color: #b30000;
+            box-shadow: 0px 4px 12px rgba(253, 255, 255, 0.884);
+        }
+
+        
+        .flashcard:hover {
+            box-shadow: 0px 0px 20px rgba(235, 229, 229, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>MARAVILHAS DO MUNDO </h1>
+
+   
+    <div class="flashcard-grid">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="front">Qual é a origem da
+                 Grande Muralha da Chinha</div>
+            <div class="back"> A origem da Grande Muralha da China foi criadacom o intuito de proteger os estados e imperios chineses dos invasores. Demorou cerca de 2mil anos para ser concluida,seno uma das 7 maravilhas do mundo e principais pontos de turismo por ano.</div>
+        </div>
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="front">O que é o Cristo redentor</div>
+            <div class="back">o Cristo redentor foi construido mo alto do morro do Corcovado,é uma estrutura de 30metros que simboliza Jesus Cristo. um simbolo do Brasil e do estado do Rio de Jarneiro.</div>
+        </div>
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="front">O que é o Coliseu</div>
+            <div class="back">O coliseu é o maior anfiteatro do mundo, quando ele ainda era usadi podia comportarcerca de 80 mil pessoas tods com o imtuito de ver espetaculos com diversos temas como lutas entre gladiadores e ate msmo execuções</div>
+        </div>
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="front">O que é Chichén Itza</div>
+            <div class="back">È uma grande cidadae antiga construidapelos maias Chichén Itzaesta localizadana peninsula de Yucatán, no Mexico. Com cerca de 91 graus em cada lado e mais um degrau na entrada somando assim 365 dias, muitos dizem que isso nao foi um feito do acaso e sim prposita.</div>
+        </div>
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="front">O que é Machu Picchu </div>
+            <div class="back">Tambem conhacida como a "Cidade perdida dos incas" esta localizadano topo de uma montanha a 2400 metros de altitude,no Peru, alem de ser umas das famosas cidadesqu abrigavam as civilizações incas tambem ficou popular por ser resistente a terremotos. </div>
+        </div>
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="front"> O que é Taj Mahal</div>
+            <div class="back">Fica localizado na cidadede Agra na India e foi construida pelo imperados Shah Jahãn Maha, um imperados muito rico e detalhista e todo seu perfecionalismo fica muito visivel pelos detalhes encontrados na construção. Sendo necessario uma equipe de 20 mil trabalhadores e levando cerca de 20 anos para ser totalmente concluida.</div>
+        </div>
+    </div>
+
+    <script>
+       
+        function flipCard(card) {
+            card.classList.toggle("is-flipped");
+        }
+    </script>
+
+</body>
+</html>
